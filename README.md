@@ -50,8 +50,8 @@ Pastikan perangkat Anda telah terpasang kakas (*tools*) berikut:
 3.  **Pemeriksaan Log Runtime Aplikasi**:
     Berikut adalah bukti bahwa aplikasi Spring Boot berhasil melakukan inisialisasi *Entity Manager Factory* (JPA/Hibernate) dan server Tomcat berjalan sukses di port internal `8080` (di-mapping ke `8000` pada host):
 
-    ![Spring Boot App Running Logs](<img width="1511" height="646" alt="Cuplikan layar 2026-05-19 140054" src="https://github.com/user-attachments/assets/dc64f74b-4f83-4e0e-83ec-07128ced0bf7" />
-)
+    ![Spring Boot App Running Logs]<img width="1511" height="646" alt="Cuplikan layar 2026-05-19 140054" src="https://github.com/user-attachments/assets/dc64f74b-4f83-4e0e-83ec-07128ced0bf7" />
+
 
 ---
 
