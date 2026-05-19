@@ -62,20 +62,20 @@ Sistem ini menyediakan alur manajemen akun penuh, mulai dari pendaftaran data ba
 ### 1. Halaman Pendaftaran Akun (`/register`)
 Formulir untuk mendaftarkan akun baru yang mencakup Username, Password, Nama Lengkap, dan Alamat Domisili.
 
-![Halaman Register](<img width="1917" height="873" alt="Cuplikan layar 2026-05-19 135730" src="https://github.com/user-attachments/assets/6129f764-96ff-4785-ac2c-48755462f0eb" />
-)
+![Halaman Register]<img width="1917" height="873" alt="Cuplikan layar 2026-05-19 135730" src="https://github.com/user-attachments/assets/6129f764-96ff-4785-ac2c-48755462f0eb" />
+
 
 ### 2. Halaman Autentikasi (`/login`)
 Gerbang masuk aman menggunakan kredensial akun yang telah didaftarkan sebelumnya.
 
-![Halaman Login](<img width="1901" height="1006" alt="Cuplikan layar 2026-05-19 135700" src="https://github.com/user-attachments/assets/3f082b98-3c30-4121-9c84-fd7799308b07" />
-)
+![Halaman Login]<img width="1901" height="1006" alt="Cuplikan layar 2026-05-19 135700" src="https://github.com/user-attachments/assets/3f082b98-3c30-4121-9c84-fd7799308b07" />
+
 
 ### 3. Halaman Dasbor / Informasi Akun & Profil (`/home`)
 Setelah sukses login, pengguna akan diarahkan ke halaman profil yang menampilkan informasi personal secara dinamis dari database.
 
-![Halaman Home Dashboard](<img width="1915" height="953" alt="Cuplikan layar 2026-05-19 125148" src="https://github.com/user-attachments/assets/e2b87ea2-8458-4668-9197-5dbd31d9693c" />
-)
+![Halaman Home Dashboard]<img width="1915" height="953" alt="Cuplikan layar 2026-05-19 125148" src="https://github.com/user-attachments/assets/e2b87ea2-8458-4668-9197-5dbd31d9693c" />
+
 
 ---
 
@@ -85,5 +85,5 @@ Untuk memastikan data terisi dengan benar di database relasional, kita dapat mas
 
 ```bash
 docker exec -it db_mahasiswa psql -U praktikum_user -d praktikum_db
-
-<img width="1436" height="662" alt="Cuplikan layar 2026-05-19 125104" src="https://github.com/user-attachments/assets/4487566b-794b-41ec-ac76-ad17cc223410" />
+ ```
+![DATA POSTGRES]<img width="1436" height="662" alt="Cuplikan layar 2026-05-19 125104" src="https://github.com/user-attachments/assets/4487566b-794b-41ec-ac76-ad17cc223410" />
