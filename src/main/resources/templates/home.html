@@ -1,30 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MY Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1>Home</h1>
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col pb-12">
 
-<p>
-    Username:
-    <span th:text="${user.username}"></span>
-</p>
+<header class="w-full max-w-3xl mx-auto px-4 pt-8 text-center flex flex-col items-center">
+    <h1 class="text-2xl font-bold text-gray-800 tracking-wide mb-4">
+        MY Website <span th:text="${user.username}">20230140156</span>
+    </h1>
 
-<p>
-    Nama:
-    <span th:text="${profile.nama}"></span>
-</p>
+    <div class="bg-indigo-600 text-white h-24 w-24 rounded-full flex items-center justify-center font-bold text-3xl uppercase shadow-md mb-6 border-4 border-white">
+        <span th:text="${#strings.substring(profile.nama, 0, 1)}">U</span>
+    </div>
 
-<p>
-    Alamat:
-    <span th:text="${profile.alamat}"></span>
-</p>
+    <div class="w-full bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl shadow-sm text-left mb-8 max-w-2xl">
+        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed">
+            "Kalau semua orang cuma peduli sama hasil, kenapa masih ada yang memperjuangkan kebahagiaan dan cinta? Lagian semua makhluk yang hidup di dunia ini juga tahu kan, kalau tujuan akhir kita semua sama. Kematian."
+        </p>
+        <p class="text-blue-600 font-semibold text-sm mt-3 text-right">— Veliona</p>
+    </div>
+</header>
 
-<a th:href="@{/logout}">
-    Logout
-</a>
+<main class="w-full max-w-md mx-auto px-4">
+    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+
+        <h2 class="text-lg font-bold text-gray-800 text-center mb-5 tracking-wide uppercase border-b border-gray-100 pb-3">
+            Informasi Akun & Profil
+        </h2>
+
+        <div class="mb-4">
+            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider">Nama Lengkap</label>
+            <p class="text-base font-semibold text-gray-800 mt-0.5" th:text="${profile.nama}">Nama Lengkap Pengguna</p>
+        </div>
+
+        <div class="mb-4">
+            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider">Username / NIM</label>
+            <p class="text-base font-medium text-indigo-600 mt-0.5">@<span th:text="${user.username}">username</span></p>
+        </div>
+
+        <div class="mb-6">
+            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider">Alamat Domisili</label>
+            <p class="text-sm font-medium text-gray-600 mt-0.5" th:text="${profile.alamat}">Alamat Lengkap User</p>
+        </div>
+
+        <div class="space-y-3 pt-2">
+            <a th:href="@{/logout}"
+               class="w-full flex items-center justify-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-red-600 bg-red-50 hover:bg-red-100 transition duration-150 shadow-sm">
+                <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Keluar dari Sistem (Logout)
+            </a>
+        </div>
+
+    </div>
+</main>
 
 </body>
 </html>

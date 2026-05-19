@@ -1,23 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Praktikum 11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1>Login</h1>
+<body class="bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center min-h-screen">
 
-<form th:action="@{/login}" method="post">
-    <p>
-        Username:
-        <input type="text" name="username">
-    </p>
-    <p>
-        Password:
-        <input type="password" name="password">
-    </p>
-    <button type="submit">Login</button>
-</form>
+<div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md transform transition-all hover:scale-[1.01]">
+    <div class="text-center mb-8">
+        <h1 class="text-3xl font-extrabold text-gray-800 tracking-tight">Selamat Datang</h1>
+        <p class="text-gray-500 mt-2 text-sm">Silakan masuk ke akun proyek Pertemuan 11 kamu</p>
+    </div>
+
+    <div th:if="${param.error}" class="mb-4 bg-red-50 border-l-4 border-red-500 p-4 rounded shadow-sm">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm text-red-700 font-medium">Username atau Password salah!</p>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${param.logout}" class="mb-4 bg-green-50 border-l-4 border-green-500 p-4 rounded shadow-sm">
+        <p class="text-sm text-green-700 font-medium">Kamu telah berhasil keluar.</p>
+    </div>
+
+    <form th:action="@{/login}" method="post" class="space-y-6">
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Username</label>
+            <div class="relative">
+                <input type="text"
+                       name="username"
+                       required
+                       placeholder="Masukkan username anda"
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 placeholder-gray-400">
+            </div>
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+            <input type="password"
+                   name="password"
+                   required
+                   placeholder="••••••••"
+                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200 placeholder-gray-400">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transform active:scale-[0.98] transition duration-200">
+            Masuk Sekarang
+        </button>
+    </form>
+
+    <div class="mt-8 text-center border-t border-gray-100 pt-6">
+        <p class="text-sm text-gray-600">
+            Belum punya akun?
+            <a th:href="@{/register}" class="text-indigo-600 hover:text-indigo-800 font-semibold transition duration-200">Daftar di sini</a>
+        </p>
+    </div>
+</div>
 
 </body>
 </html>
